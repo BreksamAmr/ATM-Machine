@@ -152,7 +152,12 @@ class Atm_project
         System.out.println(" ");
         System.out.print("                                                      Enter Amount to Withdaraw : ");
         amount = sc4.nextFloat();   
-        if(amount > balance)
+        if(amount>50000)
+        {
+            System.out.println("                                           withdraw limit exceeded, Please enter value maximum 50k");
+            withdraw_money();
+        }
+        else if(amount > balance)
         {
              System.out.println("                                                      You Don't Have Sufficient Money in Your Account Please Deposit Money");
              System.out.println(" ");
@@ -195,7 +200,12 @@ class Atm_project
         System.out.println(" ");
         System.out.print("                                                      Enter Amount to Deposit : ");
         amount = sc6.nextFloat();
-        if(amount==0)
+        if(amount>50000)
+        {
+            System.out.println("                                           Deposit limit exceeded, Please enter value maximum 50k");
+            deposit_money();
+        }
+        else if(amount==0)
         {
             System.out.println("                                                      Depositing 0 Amount");
             deposit_money();
